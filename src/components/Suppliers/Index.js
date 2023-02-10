@@ -1,9 +1,16 @@
 import React from "react";
-import IndexOfCard from "../Card/Index";
+import CardOfSuppliers from "./CardOfSuppliers";
 import { fakeData } from "./../../Data";
+import { CardListStyle } from "../../styles/GlobalStyles";
 
-function IndexOfSuppliers() {
-  return <h1> Hello</h1>;
+function IndexOfSuppliers({ fakeData }) {
+  return (
+    <div style={CardListStyle}>
+      {fakeData.map((elt) => (
+        <CardOfSuppliers key={elt.id} elt={elt} />
+      ))}
+    </div>
+  );
 }
 
 export default IndexOfSuppliers;
